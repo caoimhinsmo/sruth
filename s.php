@@ -4,9 +4,9 @@
   header('Cache-Control:max-age=0');
 
   try {
-      $moSMO = SM_moSMO::singleton();
+      $myCLIL = SM_myCLIL::singleton();
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   try {
@@ -60,7 +60,6 @@
 
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');
-//    $sruthurl = SM_Sruth::SRUTHURL;
     $sruthurl = SM_Sruth::sruthurl();
     $stordataCss = SM_Sruth::stordataCss();
     $ainmTeanga = SM_Sruth::ainmTeanga();

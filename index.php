@@ -3,10 +3,10 @@
     header("Location:https://claran.smo.uhi.ac.uk/mearachd/include_a_dhith/?faidhle=autoload.inc.php");
 
   try {
-      $moSMO = SM_moSMO::singleton();
-//      if (!$moSMO->cead('{logged-in}')) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+//      if (!$myCLIL->cead('{logged-in}')) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   try {
@@ -35,14 +35,14 @@
                               '<a href="//www.gaidhlig.org.uk/"><img src="/favicons/bng.png" alt=""> Bòrd na Gàidhlig</a>',
                               '<a href="//www.colmcille.net"><img src="/favicons/colmcille.png" alt=""> Colmcille</a>');
 
-    $ceangalRiMoSMO = ( isset($moSMO->id)
-                      ? '<li class="deas"><a href="https://claran.smo.uhi.ac.uk/moSMO/" title="Login/Logout/roghainnean airson làrach-lìn SMO">moSMO</a></li>'
+    $ceangalRiMoSMO = ( isset($myCLIL->id)
+                      ? '<li class="deas"><a href="https://claran.smo.uhi.ac.uk/myCLIL/" title="Login/Logout/roghainnean airson làrach-lìn SMO">myCLIL</a></li>'
                       : '<li class="deas"><a href="https://login.smo.uhi.ac.uk/?till_gu=https://www2.smo.uhi.ac.uk/teanga/sruth" title="Log a-steach airson deasachadh a dhèanamh">Log air</a></li>'
                       );
 
     $T_mineachadhStordata = strtr ( $T_mineachadhStordata, [ '{'=>'<b>', '}'=>'</b>' ] );
 
-    $sruthURL = SM_Sruth::SRUTHURL;
+    $sruthURL = SM_Sruth::sruthurl();
     $sruthdb = SM_Sruth::sruthdb();
     $stordataCss = SM_Sruth::stordataCss();
     if ($sruthdb=='sruth') {

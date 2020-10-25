@@ -4,10 +4,10 @@
   header('Cache-Control:max-age=0');
 
   try {
-      $moSMO = SM_moSMO::singleton();
-      if (!SM_Sruth::ceadSgriobhaidh()) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+      if (!SM_Sruth::ceadSgriobhaidh()) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   try {
@@ -18,7 +18,7 @@
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');
     $stordataCss = SM_Sruth::stordataCss();
-    $moSMO->dearbhaich();
+    $myCLIL->dearbhaich();
 
     $s    = $_REQUEST['s']    ?? '';
     $till = $_REQUEST['till'] ?? '';

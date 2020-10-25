@@ -1,12 +1,13 @@
 <?php
 class SM_Sruth
 {
-  private const LUCHD_SGRIOBHAIDH_gagden = '1991-cpd|2000-mmd|1987-rg|1999-mb|2015-cc';
-  private const LUCHD_SGRIOBHAIDH_uile   = '1991-cpd|2000-mmd';
-  const SRUTHURL = 'https://www2.smo.uhi.ac.uk/teanga/sruth';
+//  private const LUCHD_SGRIOBHAIDH_gagden = '1991-cpd|2000-mmd|1987-rg|1999-mb|2015-cc';
+//  private const LUCHD_SGRIOBHAIDH_uile   = '1991-cpd|2000-mmd';
+  private const LUCHD_SGRIOBHAIDH_gagden = 'caoimhinsmo';
+  private const LUCHD_SGRIOBHAIDH_uile   = 'caoimhinsmo';
   public static function sruthurl() {
-      if ($_SERVER['HTTPS']) { return 'https://www2.smo.uhi.ac.uk/teanga/sruth'; }
-       else                  { return  'http://www2.smo.uhi.ac.uk/teanga/sruth'; }
+       $url = ($_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['SERVER_NAME'] . '/teanga/sruth';
+       return $url;
   }
 
   public $sArr, $snArr, $nsArr;
@@ -34,9 +35,9 @@ class SM_Sruth
 
   public static function ceadSgriobhaidh() {
       if (self::sruthdb()=='sruthTest') { return 1; }
-      $moSMO = SM_moSMO::singleton();
-      if (self::sruthSeall()=='uile'   && $moSMO->cead(self::LUCHD_SGRIOBHAIDH_uile))   { return 1; }
-      if (self::sruthSeall()=='gagden' && $moSMO->cead(self::LUCHD_SGRIOBHAIDH_gagden)) { return 1; }
+      $myCLIL = SM_myCLIL::singleton();
+      if (self::sruthSeall()=='uile'   && $myCLIL->cead(self::LUCHD_SGRIOBHAIDH_uile))   { return 1; }
+      if (self::sruthSeall()=='gagden' && $myCLIL->cead(self::LUCHD_SGRIOBHAIDH_gagden)) { return 1; }
       return 0;
   }
 
@@ -53,6 +54,8 @@ class SM_Sruth
       $T_sruthPutanTitle    = $T->_('sruthPutanTitle');
       $T_canan_eadarAghaidh = $T->_('canan_eadarAghaidh');
       $T_Cobhair            = $T->_('Cobhair');
+      $T_Log_air            = $T->_('Log_air');
+      $T_Log_air_fios       = $T->_('Log_air_fios');
       $sruthdb = ucfirst(self::sruthdb());
       $sruthCeangal = ( $duilleagAghaidh ? '' : "\n<li><a href='/teanga/sruth/' title='$T_sruthPutanTitle'>$sruthdb</a>" );
       $sruthSeall = self::sruthSeall();
@@ -108,14 +111,15 @@ class SM_Sruth
 $options</select>
 </form>
 END_selCanan;
-      $sruthurl = self::SRUTHURL;
-      $moSMO  = SM_moSMO::singleton();
+      $myCLIL  = SM_myCLIL::singleton();
       $myCLIL = SM_myCLIL::singleton();
       if ($myCLIL->cead(SM_myCLIL::LUCHD_EADARTHEANGACHAIDH) && !empty($domhan))
         { $trPutan = "\n<li class=deas><a href='//www3.smo.uhi.ac.uk/teanga/smotr/tr.php?domhan=$domhan' target='_blank'>tr</a>"; } else { $trPutan = ''; }
-      $ceangalRiMoSMO = ( isset($moSMO->id)
-                        ? '<li class="deas"><a href="https://claran.smo.uhi.ac.uk/moSMO/" title="Login/Logout/roghainnean airson làrach-lìn SMO">moSMO</a></li>'
-                        : "<li class='deas'><a href='https://login.smo.uhi.ac.uk/?till_gu=$sruthurl/' title='Log a-steach airson deasachadh a dhèanamh'>Log air</a></li>"
+      $sruthURL = self::sruthurl();
+      $smotr = ( strpos($sruthURL,'www2')!==false ? 'smotr_dev' : 'smotr'); //Adhockery - Cleachd 'smotr_dev' airson login air www2.smo.uhi.ac.uk
+      $ceangalRiMoSMO = ( isset($myCLIL->id)
+                        ? "<li class='deas'><a href='/teanga/$smotr/logout.php' title='Log out from myCLIL'>Logout</a></li>"
+                        : "<li class='deas'><a href='/teanga/$smotr/login.php?till_gu=$sruthURL' title='$T_Log_air_fios'>$T_Log_air</a></li>"
                         );
       $cobhairHtml = ( $duilleagAghaidh ? "<li class='deas'><a href='cobhair.php'>$T_Cobhair</a>" : '' );
       $navbar = <<<EOD_NAVBAR
@@ -182,7 +186,7 @@ EOD_NAVBAR;
 
 
   public static function ainmTeanga() {
-      $moSMO = SM_moSMO::singleton();
+      $myCLIL = SM_myCLIL::singleton();
       if (self::sruthSeall()=='uile') {
           $ainmean = array('gd' =>'Gàidhlig',
                            'ga' =>'Gaeilge',
@@ -258,7 +262,7 @@ EOD_NAVBAR;
       if (!is_array($cinnFhacail)) { throw new SM_Exception('Feumaidh am parameter $cinnFhacail dhan function insertAbairt bhith na array'); }
       if (!is_array($buidhnean))   { throw new SM_Exception('Feumaidh am parameter $buidhnean dhan function insertAbairt bhith na array');   }
       if ($sgrud<>1) { $sgrud=0; } //paranoia
-      $moSMO = SM_moSMO::singleton();
+      $myCLIL = SM_myCLIL::singleton();
       $smid = $moSMO->id;
       if (is_null($csmid))  { $csmid  = $smid;  }
       if (is_null($cutime)) { $cutime = time(); }

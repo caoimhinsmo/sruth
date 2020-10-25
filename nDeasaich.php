@@ -4,10 +4,10 @@
   header("Cache-Control:max-age=0");
 
   try {
-      $moSMO = SM_moSMO::singleton();
-      if (!SM_Sruth::ceadSgriobhaidh()) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+      if (!SM_Sruth::ceadSgriobhaidh()) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   try {
@@ -24,10 +24,10 @@
     $T_fios                          = $T->_('fios');
     $T_Sabhail                       = $T->_('Sàbhail');
 
-    $moSMO->dearbhaich();
-    $smid = $moSMO->id;
+    $myCLIL->dearbhaich();
+    $smid = $myCLIL->id;
     $navbar = SM_Sruth::navbar($T->domhan);
-    $sruthURL = SM_Sruth::SRUTHURL;
+    $sruthURL = SM_Sruth::sruthurl();
 
     $nUr = -1;
     $HTML = $foirmHTML = $fiosMearachd = '';

@@ -4,9 +4,9 @@
   header('Cache-Control:max-age=0');
 
   try {
-      $moSMO = SM_moSMO::singleton();
+      $myCLIL = SM_myCLIL::singleton();
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   $dublaichHtml = $sguabHtml = $cuirRiHtml = $nDeasaichHtml = $sDeasaichHtml = $sSguabCeistHtml = $javascriptDeasachaidh = $HTML = '';
@@ -60,7 +60,7 @@
 
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');
-    $sruthurl = SM_Sruth::SRUTHURL;
+    $sruthurl = SM_Sruth::sruthurl();
     $stordataCss = SM_Sruth::stordataCss();
 
     if (!isset($_REQUEST['n'])) { throw new SM_Exception(sprintf($T_Parameter_p_a_dhith,'n')); }
@@ -104,8 +104,8 @@ END_sguab;
             if (!is_numeric($cuirRi) || intval($cuirRi)<>$cuirRi || $cuirRi<1) { throw new SM_Exception("$T_Parameter_mi_iom: cuirRi=$cuirRi"); }
             if (!in_array($meit,array_keys($meitArr)))                         { throw new SM_Exception("$T_Parameter_mi_iom: meit=$meit");     }
             if (!is_numeric($astar) || $astar<=0)                              { throw new SM_Exception("$T_Parameter_mi_iom: astar=$astar");   }
-            $moSMO = SM_moSMO::singleton();
-            $smid = $moSMO->id;
+            $myCLIL = SM_myCLIL::singleton();
+            $smid = $myCLIL->id;
             $stmtINS = $DbSruth->prepare("REPLACE INTO sruthns (n,s,astar,meit,smid) VALUES (:n,:s,:astar,:meit,:smid)");
             $stmtINS->execute(array(':n'=>$n,':s'=>$cuirRi,':astar'=>$astar,':meit'=>$meit,':smid'=>$smid));
         }

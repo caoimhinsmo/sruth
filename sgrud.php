@@ -4,10 +4,10 @@
   header('Cache-Control:max-age=0');
 
   try {
-      $moSMO = SM_moSMO::singleton();
-      if (!SM_Sruth::ceadSgriobhaidh()) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+      if (!SM_Sruth::ceadSgriobhaidh()) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   function uairHtml ($utime) {
@@ -38,8 +38,8 @@
 
     $T_fiosSgrud2 = strtr ( $T_fiosSgrud2, [ '✓' => "<img src='/icons-smo/ceart.png' alt='$T_Ceart'>" ] );
 
-    $moSMO->dearbhaich();
-    $smid = $moSMO->id;
+    $myCLIL->dearbhaich();
+    $smid = $myCLIL->id;
 
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');

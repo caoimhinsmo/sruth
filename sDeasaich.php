@@ -4,10 +4,10 @@
   header("Cache-Control:max-age=0");
 
   try {
-      $moSMO = SM_moSMO::singleton();
-      if (!SM_Sruth::ceadSgriobhaidh()) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+      if (!SM_Sruth::ceadSgriobhaidh()) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   try {
@@ -27,8 +27,8 @@
     $T_Abairt_ann_cheana             = $T->_('Abairt_ann_cheana');
     $T_Chaidh_abairt_a_cho_mheasgadh = $T->_('Chaidh_abairt_a_cho_mheasgadh');
 
-    $moSMO->dearbhaich();
-    $smid = $moSMO->id ?? 'test';
+    $myCLIL->dearbhaich();
+    $smid = $myCLIL->id ?? 'test';
 
     $HTML = $cinnInputHtml = $cLiostaHtml = $cLiostaAttr = $tRoimhe = $aRoimhe = $refreshHtml = $fiosMearachd = '';
     $pailtRoimhe = 0;
@@ -39,7 +39,7 @@
 
     $navbar      = SM_Sruth::navbar($T->domhan);
     $stordataCss = SM_Sruth::stordataCss();
-    $sruthUrl    = SM_Sruth::SRUTHURL;
+    $sruthUrl    = SM_Sruth::sruthurl();
     $ainmTeanga  = SM_Sruth::ainmTeanga();
     $teangaithe = array_keys($ainmTeanga);
 

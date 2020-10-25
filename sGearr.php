@@ -4,10 +4,10 @@
   header('Cache-Control:max-age=0');
 
   try {
-      $moSMO = SM_moSMO::singleton();
-      if (!SM_Sruth::ceadSgriobhaidh()) { $moSMO->diultadh(''); }
+      $myCLIL = SM_myCLIL::singleton();
+      if (!SM_Sruth::ceadSgriobhaidh()) { $myCLIL->diultadh(''); }
   } catch (Exception $e) {
-      $moSMO->toradh = $e->getMessage();
+      $myCLIL->toradh = $e->getMessage();
   }
 
   $s    = (empty($_REQUEST['s'])    ? '' : $_REQUEST['s']);
@@ -23,7 +23,7 @@
     $T_Chan_eil_abairt_le_aireamh_sin   = $T->_('Chan_eil_abairt_le_aireamh_sin');
     $T_Chaidh_abairt_s_a_ghearradh      = $T->_('Chaidh_abairt_s_a_ghearradh');
 
-    $moSMO->dearbhaich();
+    $myCLIL->dearbhaich();
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');
     $navbar = SM_Sruth::navbar();
