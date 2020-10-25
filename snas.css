@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+div.s { display:inline-block; }
+span.abairt, a.abairt { padding:0 3px 1px 3px; border:1px solid; border-radius:5px; white-space:nowrap; }
+a.abairt[lang]:hover { color:yellow; background-color:blue; text-decoration:none; }
+span.abairt[lang=gd], a.abairt[lang=gd] { background-color:#ddf; border-color:blue; }
+span.abairt[lang=ga], a.abairt[lang=ga] { background-color:#dfd; border-color:green; }
+span.abairt[lang=gv], a.abairt[lang=gv] { background-color:#fdd; border-color:red; }
+span.abairt[lang=en], a.abairt[lang=en] { background-color:#ffc; border-color:#990; }
+span.abairt[lang=fr], a.abairt[lang=fr] { background-color:#eef; border-color:#55f; }
+span.abairt[lang=it], a.abairt[lang=it] { background-color:#bdb; border-color:red; }
+span.abairt[lang=la], a.abairt[lang=la] { background-color:#fdf; border-color:#909; }
+span.abairt[lang=de], a.abairt[lang=de] { background-color:#bbb; border-color:black; }
+.pailt1, .pailt2, .pailt3 { font-weight:bold; }
+
+.fios { color:green; font-size:80%; }
+
+p.ceann { margin:6px 0 1px 0; font-weight:bold; }
+.ceann { font-weight:bold; }
+.ceann[lang=gd] { color:blue;  }
+.ceann[lang=ga] { color:green; }
+.ceann[lang=gv] { color:red;   }
+.ceann[lang=en] { color:#cc0;  }
+.ceann[lang=fr] { color:#a9f;  }
+.ceann[lang=it] { color:#5f5;  }
+.ceann[lang=la] { color:#909;  }
+.ceann[lang=de] { color:black; }
+a.ceann:hover {color:yellow; }
+
+ul.smo-navlist select { border:0; }
