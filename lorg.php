@@ -13,15 +13,15 @@
 
   $T = new SM_T('sruth/lorg');
   $hl = $T::hl0();
-  $T_Lorg_abairt          = $T->_('Lorg abairt','hsc');
-  $T_Lorg                 = $T->_('Lorg');
-  $T_Canan                = $T->_('Language');
-  $T_Abairt               = $T->_('Abairt');
-  $T_Abairt_taic          = $T->_('Abairt_taic');
-  $T_abairt               = $T->_('abairt');
-  $T_abairtean            = $T->_('abairtean');
-  $T_Bitheantas           = $T->_('Bitheantas');
-  $T_Chaidh_n_rud_a_lorg  = $T->_('Chaidh_n_rud_a_lorg');
+  $T_Lorg_abairt          = $T->h('Lorg abairt','hsc');
+  $T_Lorg                 = $T->h('Lorg');
+  $T_Canan                = $T->h('Language');
+  $T_Abairt               = $T->h('Abairt');
+  $T_Abairt_taic          = $T->h('Abairt_taic');
+  $T_abairt               = $T->h('abairt');
+  $T_abairtean            = $T->h('abairtean');
+  $T_Bitheantas           = $T->h('Bitheantas');
+  $T_Chaidh_n_rud_a_lorg  = $T->h('Chaidh_n_rud_a_lorg');
 
   $stordataConnector = SM_Sruth::stordataConnector();
   $DbSruth = $stordataConnector::singleton('rw');

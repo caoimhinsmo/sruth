@@ -18,7 +18,7 @@
 
     $T = new SM_T('sruth/nSguab');
     $hl = $T::hl0();
-    $T_Parameter_mi_iom = $T->_('Parameter_mi_iom');
+    $T_Parameter_mi_iom = $T->h('Parameter_mi_iom');
 
     $n = (!isset($_REQUEST['n']) ? 0 : $_REQUEST['n']);
     $n = htmlspecialchars($n);

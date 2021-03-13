@@ -13,19 +13,19 @@
   try {
     $T = new SM_T('sruth/sDeasaich');
     $hl = $T::hl0();
-    $T_Canan                         = $T->_('Language');
-    $T_Abairt                        = $T->_('Abairt');
-    $T_Bitheantas                    = $T->_('Bitheantas');
-    $T_Faclan_cinn                   = $T->_('Faclan-cinn');
-    $T_Sabhail                       = $T->_('Sàbhail');
-    $T_Cruthaich_abairt_ur           = $T->_('Cruthaich_abairt_ur');
-    $T_Deasaich_abairt_n             = $T->_('Deasaich_abairt_n');
-    $T_Paramter_p_a_dhith            = $T->_('Parameter_p_a_dhith');
-    $T_Parameters_a_dhith            = $T->_('Parameters a dhìth');
-    $T_Feumaidh_tu_canan_a_thaghadh  = $T->_('Feumaidh tu cànan a thaghadh');
-    $T_Cha_ghabh_abairt_chur_gu_null = $T->_('Cha_ghabh_abairt_chur_gu_null');
-    $T_Abairt_ann_cheana             = $T->_('Abairt_ann_cheana');
-    $T_Chaidh_abairt_a_cho_mheasgadh = $T->_('Chaidh_abairt_a_cho_mheasgadh');
+    $T_Canan                         = $T->h('Language');
+    $T_Abairt                        = $T->h('Abairt');
+    $T_Bitheantas                    = $T->h('Bitheantas');
+    $T_Faclan_cinn                   = $T->h('Faclan-cinn');
+    $T_Sabhail                       = $T->h('Sàbhail');
+    $T_Cruthaich_abairt_ur           = $T->h('Cruthaich_abairt_ur');
+    $T_Deasaich_abairt_n             = $T->h('Deasaich_abairt_n');
+    $T_Paramter_p_a_dhith            = $T->h('Parameter_p_a_dhith');
+    $T_Parameters_a_dhith            = $T->h('Parameters a dhìth');
+    $T_Feumaidh_tu_canan_a_thaghadh  = $T->h('Feumaidh tu cànan a thaghadh');
+    $T_Cha_ghabh_abairt_chur_gu_null = $T->h('Cha_ghabh_abairt_chur_gu_null');
+    $T_Abairt_ann_cheana             = $T->h('Abairt_ann_cheana');
+    $T_Chaidh_abairt_a_cho_mheasgadh = $T->h('Chaidh_abairt_a_cho_mheasgadh');
 
     $myCLIL->dearbhaich();
     $smid = $myCLIL->id ?? 'test';

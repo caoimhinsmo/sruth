@@ -6,18 +6,18 @@
   try {
     $T = new SM_T('sruth/liosta');
     $hl = $T::hl0();
-    $T_Liosta                 = $T->_('Liosta');
-    $T_gu                     = $T->_('gu');
-    $T_Nochd_gach_abairt      = $T->_('Nochd_gach_abairt');
-    $T_Nochd_gach_abairt_fios = $T->_('Nochd_gach_abairt_fios');
-    $T_Astar                  = $T->_('Astar');
-    $T_Astar_fios             = $T->_('Astar_fios');
-    $T_astar                  = $T->_('astar');
-    $T_Uraich                 = $T->_('Uraich');
-    $T_Uraich_fios            = $T->_('Uraich_fios');
-    $T_Bitheantas             = $T->_('Bitheantas');
-    $T_Bitheantas_fios        = $T->_('Bitheantas_fios');
-    $T_Briog_gus_suaip        = $T->_('Briog_gus_suaip');
+    $T_Liosta                 = $T->h('Liosta');
+    $T_gu                     = $T->h('gu');
+    $T_Nochd_gach_abairt      = $T->h('Nochd_gach_abairt');
+    $T_Nochd_gach_abairt_fios = $T->h('Nochd_gach_abairt_fios');
+    $T_Astar                  = $T->h('Astar');
+    $T_Astar_fios             = $T->h('Astar_fios');
+    $T_astar                  = $T->h('astar');
+    $T_Uraich                 = $T->h('Uraich');
+    $T_Uraich_fios            = $T->h('Uraich_fios');
+    $T_Bitheantas             = $T->h('Bitheantas');
+    $T_Bitheantas_fios        = $T->h('Bitheantas_fios');
+    $T_Briog_gus_suaip        = $T->h('Briog_gus_suaip');
 
     $ainmTeanga = SM_Sruth::ainmTeanga();
     $teangaithe = array_keys($ainmTeanga);

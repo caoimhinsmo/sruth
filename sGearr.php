@@ -20,8 +20,8 @@
     $hl = $T::hl0();
     $navbar = SM_Sruth::navbar($T->domhan);
 
-    $T_Chan_eil_abairt_le_aireamh_sin   = $T->_('Chan_eil_abairt_le_aireamh_sin');
-    $T_Chaidh_abairt_s_a_ghearradh      = $T->_('Chaidh_abairt_s_a_ghearradh');
+    $T_Chan_eil_abairt_le_aireamh_sin   = $T->h('Chan_eil_abairt_le_aireamh_sin');
+    $T_Chaidh_abairt_s_a_ghearradh      = $T->h('Chaidh_abairt_s_a_ghearradh');
 
     $myCLIL->dearbhaich();
     $stordataConnector = SM_Sruth::stordataConnector();

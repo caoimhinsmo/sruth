@@ -51,25 +51,26 @@ class SM_Sruth
   public static function navbar($domhan='',$duilleagAghaidh=0) {
       $hl0 = SM_T::hl0();
       $T = new SM_T('sruth/navbar');
-      $T_sruthPutanTitle    = $T->_('sruthPutanTitle');
-      $T_canan_eadarAghaidh = $T->_('canan_eadarAghaidh');
-      $T_Cobhair            = $T->_('Cobhair');
-      $T_Log_air            = $T->_('Log_air');
-      $T_Log_air_fios       = $T->_('Log_air_fios');
+      $T_sruthPutanTitle    = $T->h('sruthPutanTitle');
+      $T_canan_eadarAghaidh = $T->h('canan_eadarAghaidh');
+      $T_Cobhair            = $T->h('Cobhair');
+      $T_Log_air            = $T->h('Log_air');
+      $T_Log_air_fios       = $T->h('Log_air_fios');
       $sruthdb = ucfirst(self::sruthdb());
       $sruthCeangal = ( $duilleagAghaidh ? '' : "\n<li><a href='/teanga/sruth/' title='$T_sruthPutanTitle'>$sruthdb</a>" );
       $sruthSeall = self::sruthSeall();
       if ($sruthSeall=='gagden') {
           $sruthSeallEile = 'uile';
-          $teacsaPutan     = $T->_('Seall gach cànan');
-          $teacsaPutanFios = $T->_('Seall gach cànan - fios');
+          $teacsaPutan     = $T->h('Seall gach cànan');
+          $teacsaPutanFios = $T->h('Seall gach cànan - fios');
       } else {
           $sruthSeallEile = 'gagden';
-          $teacsaPutan     = $T->_('Seall ga-gd-en');
-          $teacsaPutanFios = $T->_('Seall ga-gd-en - fios');
+          $teacsaPutan     = $T->h('Seall ga-gd-en');
+          $teacsaPutanFios = $T->h('Seall ga-gd-en - fios');
       }
       $hlArr = array(
           'br'=>'Brezhoneg',
+          'da'=>'Dansk',
           'de'=>'Deutsch',
           'en'=>'English',
           'fr'=>'Français',
@@ -78,10 +79,10 @@ class SM_Sruth
           'it'=>'Italiano',
           'lt'=>'Lietuvių',
           'pt'=>'Português',
-          'bg'=>'Български',
           'sh'=>'Srpskohrvatsk',
-            '----1'=>'',  //Partial translations
-          'da'=>'Dansk');
+          'bg'=>'Български',
+//            '----1'=>'',  //Partial translations
+      );
       $options = '';
       foreach ($hlArr as $hl=>$hlAinm) {
           if (substr($hl,0,4)=='----') { $options .= "<option value='' disabled>&nbsp;_{$hlAinm}_</option>/n"; }  //Divider in the list of select options
@@ -172,9 +173,9 @@ EOD_NAVBAR;
       if ($pailt==3) { $pailtClass = ' pailt3'; }
 
       if ($pailt==0) { $pailtHtml = ''; }
-      if ($pailt==1) { $pailtHtml = '★';   $title = $T->_('cumanta'); }
-      if ($pailt==2) { $pailtHtml = '★★';  $title = $T->_('glé chumanta'); }
-      if ($pailt==3) { $pailtHtml = '★★★'; $title = $T->_('glé glé chumanta'); }
+      if ($pailt==1) { $pailtHtml = '★';   $title = $T->h('cumanta'); }
+      if ($pailt==2) { $pailtHtml = '★★';  $title = $T->h('glé chumanta'); }
+      if ($pailt==3) { $pailtHtml = '★★★'; $title = $T->h('glé glé chumanta'); }
       if ($pailtHtml) { $pailtHtml = "<span style='color:orange' title='$title'>$pailtHtml</span>"; }
 
       $aHtml = htmlspecialchars($a) . " $pailtHtml";

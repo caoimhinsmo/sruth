@@ -13,16 +13,16 @@
   try {
     $T = new SM_T('sruth/nDeasaich');
     $hl = $T::hl0();
-    $T_Cruthaich_buidheann_ur        = $T->_('Cruthaich_buidheann_ur');
-    $T_Parameter_mi_iom              = $T->_('Parameter mi_iom');
-    $T_Chan_eil_buidheann_ann        = $T->_('Chan_eil_buidheann_ann');
-    $T_Buidheann_ann_mu_thrath       = $T->_('Buidheann_ann_mu_thrath');
-    $T_Cha_ghabhadh_abairt_INSERTadh = $T->_('Cha_ghabhadh_abairt_INSERTadh');
-    $T_Atharrachadh_soirbheachail    = $T->_('Atharrachadh soirbheachail');
-    $T_Chaidh_buidheann_ur_chur_ann  = $T->_('Chaidh_buidheann_ur_chur_ann');
-    $T_Deasaich_buidheann_n          = $T->_('Deasaich_buidheann_n');
-    $T_fios                          = $T->_('fios');
-    $T_Sabhail                       = $T->_('Sàbhail');
+    $T_Cruthaich_buidheann_ur        = $T->h('Cruthaich_buidheann_ur');
+    $T_Parameter_mi_iom              = $T->h('Parameter mi_iom');
+    $T_Chan_eil_buidheann_ann        = $T->h('Chan_eil_buidheann_ann');
+    $T_Buidheann_ann_mu_thrath       = $T->h('Buidheann_ann_mu_thrath');
+    $T_Cha_ghabhadh_abairt_INSERTadh = $T->h('Cha_ghabhadh_abairt_INSERTadh');
+    $T_Atharrachadh_soirbheachail    = $T->h('Atharrachadh soirbheachail');
+    $T_Chaidh_buidheann_ur_chur_ann  = $T->h('Chaidh_buidheann_ur_chur_ann');
+    $T_Deasaich_buidheann_n          = $T->h('Deasaich_buidheann_n');
+    $T_fios                          = $T->h('fios');
+    $T_Sabhail                       = $T->h('Sàbhail');
 
     $myCLIL->dearbhaich();
     $smid = $myCLIL->id;

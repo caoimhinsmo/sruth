@@ -13,7 +13,7 @@
   try {
     $T = new SM_T('sruth/sCeart');
     $hl = $T::hl0();
-    $T_fiosSoirbheis   = $T->_('fiosSoirbheis');
+    $T_fiosSoirbheis   = $T->h('fiosSoirbheis');
 
     $stordataConnector = SM_Sruth::stordataConnector();
     $DbSruth = $stordataConnector::singleton('rw');

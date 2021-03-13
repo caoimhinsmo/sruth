@@ -11,7 +11,7 @@
 
   $T = new SM_T('sruth/cobhair');
   $hl = $T::hl0();
-  $T_Cobhair = $T->_('Cobhair');
+  $T_Cobhair = $T->h('Cobhair');
 
   $stordataConnector = SM_Sruth::stordataConnector();
   $DbSruth = $stordataConnector::singleton('rw');

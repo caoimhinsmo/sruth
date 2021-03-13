@@ -18,7 +18,7 @@
 
     $T = new SM_T('sruth/nDublaich');
     $hl = $T::hl0();
-    $T_Parameter_mi_iom = $T->_('Parameter_mi_iom');
+    $T_Parameter_mi_iom = $T->h('Parameter_mi_iom');
 
     $nUr = -1;
     $HTML = $refreshHTML = '';
