@@ -118,9 +118,10 @@ END_selCanan;
         { $trPutan = "\n<li class=deas><a href='//www3.smo.uhi.ac.uk/teanga/smotr/tr.php?domhan=$domhan' target='_blank'>tr</a>"; } else { $trPutan = ''; }
       $sruthURL = self::sruthurl();
       $smotr = ( strpos($sruthURL,'www2')!==false ? 'smotr_dev' : 'smotr'); //Adhockery - Cleachd 'smotr_dev' airson login air www2.smo.uhi.ac.uk
+      $till_gu = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
       $ceangalRiMoSMO = ( isset($myCLIL->id)
                         ? "<li class='deas'><a href='/teanga/$smotr/logout.php' title='Log out from myCLIL'>Logout</a></li>"
-                        : "<li class='deas'><a href='/teanga/$smotr/login.php?till_gu=$sruthURL' title='$T_Log_air_fios'>$T_Log_air</a></li>"
+                        : "<li class='deas'><a href='/teanga/$smotr/login.php?till_gu=$till_gu' title='$T_Log_air_fios'>$T_Log_air</a></li>"
                         );
       $cobhairHtml = ( $duilleagAghaidh ? "<li class='deas'><a href='cobhair.php'>$T_Cobhair</a>" : '' );
       $navbar = <<<EOD_NAVBAR

@@ -1,8 +1,16 @@
 robots.txt
 google*.html
 **/*~
+**/*.GITIGNORE
+**/*_GITIGNORE
+**/*.SABH
+**/*_SABH
+**/*.SEAN
 **/*_SEAN
+**/*.SEANN
 **/*_SEANN
+**/*.SGUAB
 **/*_SGUAB
-
+**/*.TEST
+**/*_TEST
 
