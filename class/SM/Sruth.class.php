@@ -56,6 +56,7 @@ class SM_Sruth
       $T_Cobhair            = $T->h('Cobhair');
       $T_Log_air            = $T->h('Log_air');
       $T_Log_air_fios       = $T->h('Log_air_fios');
+      $T_Logout             = $T->h('Logout');
       $sruthdb = ucfirst(self::sruthdb());
       $sruthCeangal = ( $duilleagAghaidh ? '' : "\n<li><a href='/teanga/sruth/' title='$T_sruthPutanTitle'>$sruthdb</a>" );
       $sruthSeall = self::sruthSeall();
@@ -120,8 +121,8 @@ END_selCanan;
       $smotr = ( strpos($sruthURL,'www2')!==false ? 'smotr_dev' : 'smotr'); //Adhockery - Cleachd 'smotr_dev' airson login air www2.smo.uhi.ac.uk
       $till_gu = 'https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
       $ceangalRiMoSMO = ( isset($myCLIL->id)
-                        ? "<li class='deas'><a href='/teanga/$smotr/logout.php' title='Log out from myCLIL'>Logout</a></li>"
-                        : "<li class='deas'><a href='/teanga/$smotr/login.php?till_gu=$till_gu' title='$T_Log_air_fios'>$T_Log_air</a></li>"
+                        ? "<li class='deas'><a href='/teanga/$smotr/logout.php?till_gu=$till_gu' title='Log out from myCLIL'>$T_Logout</a>"
+                        : "<li class='deas'><a href='/teanga/$smotr/login.php?till_gu=$till_gu' title='$T_Log_air_fios'>$T_Log_air</a>"
                         );
       $cobhairHtml = ( $duilleagAghaidh ? "<li class='deas'><a href='cobhair.php'>$T_Cobhair</a>" : '' );
       $navbar = <<<EOD_NAVBAR
@@ -199,6 +200,7 @@ EOD_NAVBAR;
                            'es' =>'Español',
                            'la' =>'Latine',
                            'de' =>'Deutsch',
+                           'sco'=>'Scots',
                            'cy' =>'Cymraeg',
                            'sga'=>'Sengoídelc');
       } else {

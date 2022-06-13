@@ -19,7 +19,7 @@
   $stordataCss = SM_Sruth::stordataCss();
 
   if ($hl=='gd') { $cobhairHtml = <<<EOD_gd
-<p>Is féidir <i>An Sruth</i> a chuardach, mar fhoclóir, agus mar thesaurus geall leis, mar seo a leanas:</p>
+<p>Gabhaidh An Sruth rannsachadh, mar bhriathrachan, agus mar thesaurus gu ìre, mar a leanas:</p>
 
 <ul>
 <li>Fo <b>Liosta</b> (anns a bheil na h-abairtean air fad a rèir na h-aibidile) a’ cleachdadh Find/Ctrl+F:
@@ -51,10 +51,12 @@ English &gt; English</p>
 </ul>
 
 <p class=eagaich>Mar eisimpleir: Cuir a-steach ‘uisge’ san raon seo agus nochdaidh na toraidhean air fad far a bheil am facal-cinn sin.</p>
+
+<p class=ll>⇒ <a href="llEile.php">Làraichean-lìn eile</a> a dh’fhaodadh a bhith feumail</p>
 EOD_gd;
 
   } elseif ($hl=='ga') { $cobhairHtml = <<<EOD_ga
-<p>Gabhaidh An Sruth rannsachadh, mar bhriathrachan, agus mar thesaurus gu ìre, mar a leanas:</p>
+<p>Is féidir <i>An Sruth</i> a chuardach, mar fhoclóir, agus mar thesaurus geall leis, mar seo a leanas:</p>
 
 <ul>
 <li>Faoi <b>Liosta</b> (ina bhfuil na leaganacha ar fad de réir na haibítre) ag baint feidhme as Find/Ctrl+F:
@@ -86,9 +88,11 @@ English &gt; English</p>
 </ul>
 
 <p class=eagaich>Mar shampla: Cuir isteach ‘báisteach’ sa réimse seo agus nochtfaidh na torthaí ina bhfuil an ceannfhocal sin.</p>
+
+<p class=ll>⇒ <a href="llEile.php">Láithreáin Ghréasáin eile</a> a d’fhéadfadh a bheith cabhrach</p>
 EOD_ga;
 
-  } elseif ($hl=='en') { $cobhairHtml = <<<EOD_en
+  } else { $cobhairHtml = <<<EOD_en
 <p><i>An Sruth</i> is searchable, as a vocabulary, and a thesaurus to an extent, as follows:</p>
 
 <ul>
@@ -121,11 +125,10 @@ English &gt; English</p>
 </ul>
 
 <p class=eagaich>Enter ‘rain’ in this field and the results in which that headword appears will be returned</p>
+
+<p class=ll>⇒ <a href="llEile.php">Other websites</a> which could be useful</p>
 EOD_en;
 
-  } else { $cobhairHtml = <<<EOD_gunCobhair
-<p>Duilich - Chan eil duilleag cóbhrach againn sa chànan agad<br><br>Sorry - We have no help page in your language</p>
-EOD_gunCobhair;
   }
 
   echo <<<EOD_HTML
@@ -139,12 +142,8 @@ EOD_gunCobhair;
     <link rel="StyleSheet" href="snas.css">$stordataCss
     <style>
         p.eagaich { margin-left:2.5em; }
+        p.ll { margin-top:3em; border-top:1px solid black; padding:0.1em; font-size:80%; }
     </style>
-    <script>
-        function teangaUr(sel) {
-            sel.parentNode.parentNode.lang = sel.value;
-        }
-    </script>
 </head>
 <body>
 
