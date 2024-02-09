@@ -3,7 +3,7 @@ class SM_Sruth
 {
 //  private const LUCHD_SGRIOBHAIDH_gagden = '1991-cpd|2000-mmd|1987-rg|1999-mb|2015-cc';
 //  private const LUCHD_SGRIOBHAIDH_uile   = '1991-cpd|2000-mmd';
-  private const LUCHD_SGRIOBHAIDH_gagden = 'caoimhinsmo';
+  private const LUCHD_SGRIOBHAIDH_gagden = 'caoimhinsmo|Rody';
   private const LUCHD_SGRIOBHAIDH_uile   = 'caoimhinsmo';
   public static function sruthurl() {
        $url = ($_SERVER['HTTPS'] ? 'https' : 'http') . '://' . $_SERVER['SERVER_NAME'] . '/teanga/sruth';
@@ -141,6 +141,7 @@ EOD_NAVBAR;
   public function __construct ($smid=null) {
       $stordataConnector = self::stordataConnector();
       $DbSruth = $stordataConnector::singleton('rw');
+error_log('Sruth: construct: connected');
       $this->sArr = $this->sArr= $this->snArr = $this->nsArr = [];
       $stmtSELsruths = $DbSruth->prepare('SELECT * FROM sruths ORDER BY s');
       $stmtSELsruths->execute();
@@ -157,6 +158,7 @@ EOD_NAVBAR;
           if (!isset($this->nsArr[$n])) { $this->nsArr[$n] = []; } 
           $this->nsArr[$n][$s] = $astar;
       }
+error_log('Sruth: construct: deiseil');
   }
 
 

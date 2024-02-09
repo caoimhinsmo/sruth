@@ -143,7 +143,8 @@ EODHtmlCeann;
             $HTML .= "<p style=\"color:red;font-weight:bold\">$fiosMearachd</p>\n";
         } else {
             $tRoimheHtml = htmlspecialchars($tRoimhe);
-            $aRoimheHtml = htmlspecialchars($aRoimhe);
+//            $aRoimheHtml = htmlspecialchars($aRoimhe); //Chan eil mi a’ tuigsinn carson nach eil seo ag obair agus riatanach
+            $aRoimheHtml = $aRoimhe;
             $selectTHtml  = "<select name='t' required onchange='teangaUr(this);'>\n";
             $selectTHtml .= "<option value=''" . ($tRoimhe=='' ? ' selected' : '') . "></option>\n";
             foreach ($teangaithe as $t) { $selectTHtml .= "<option value='$t'" . ($tRoimhe==$t ? ' selected' : '') . '>' . $ainmTeanga[$t] . "</option>\n"; }

@@ -122,7 +122,7 @@ $navbar
 
 <div style="clear:both;margin:0 0 4px 0;padding:1px 4px;background-color:#ffa;color:brown;font-size:85%;font-weight:bold">$T_taicColmcille</div>
 <div class="smo-latha">
-2019-03-08 <a href="/~caoimhin/cpd.html">CPD</a><br />
+2019-03-08 <a href="/~caoimhin/cpd.html">CPD</a><br>
 </div>
 </body>
 </html>

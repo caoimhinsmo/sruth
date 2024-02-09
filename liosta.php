@@ -62,12 +62,17 @@
 
     $sruth = new SM_Sruth();
 
+error_log('Ceum 1');
     $stmtSELs = $DbSruth->prepare('SELECT t, pailt FROM sruths WHERE s=:s');
     $stmtSELs->bindColumn(1,$t);
     $stmtSELs->bindColumn(2,$pailt);
     $resultHTML = '';
     $nabairt = 0;
+$errCnt = 0;
     foreach ($cSruthArr as $c=>$sArr) {
+$errCnt += 1;
+error_log("\$errCnt=$errCnt");
+if ($errCnt>3) { break; }
         $cStuth = '';
         foreach ($sArr as $s) {
             $nabArr = $sruth->nabaidhean($s,$astarMax);

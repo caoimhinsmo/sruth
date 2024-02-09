@@ -37,15 +37,16 @@
     $stmtNINS = $DbSruth->prepare('INSERT INTO sruthn (fios) VALUES (:fios)');
     $stmtNINS->execute(array(':fios'=>$fios));
     $nUr = $DbSruth->lastInsertId();
-    $stmtNSSEL = $DbSruth->prepare('SELECT s,astar,meit FROM sruthns WHERE n=:n');
+    $stmtNSSEL = $DbSruth->prepare('SELECT s,astar,meit,smid FROM sruthns WHERE n=:n');
     $stmtNSSEL->execute(array(':n'=>$n));
     $rows = $stmtNSSEL->fetchAll(PDO::FETCH_ASSOC);
     foreach ($rows as $row) {
         $s     = $row['s'];
         $astar = $row['astar'];
         $meit  = $row['meit'];
-        $stmtNSINS = $DbSruth->prepare('INSERT INTO sruthns (n,s,astar,meit) VALUES (:n,:s,:astar,:meit)');
-        $stmtNSINS->execute(array(':n'=>$nUr,':s'=>$s,':astar'=>$astar,'meit'=>$meit));
+        $smid  = $row['smid'];
+        $stmtNSINS = $DbSruth->prepare('INSERT INTO sruthns (n,s,astar,meit,smid) VALUES (:n,:s,:astar,:meit,:smid)');
+        $stmtNSINS->execute(array(':n'=>$nUr,':s'=>$s,':astar'=>$astar,'meit'=>$meit,'smid'=>$smid));
     }
     $DbSruth->commit();
 
