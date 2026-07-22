@@ -30,6 +30,7 @@
     $teanga1 = $ainmTeanga[$t1];
     $teanga2 = $ainmTeanga[$t2];
     $astarMax  = ( isset($_GET['astarMax'])  ? $_GET['astarMax'] : 2 );
+    if (!is_numeric($astarMax)) { $astarMax = 2; }
     $nochdUile = ( empty($_GET['nochdUile']) ? FALSE : TRUE );
     $nochdUileChecked = ( $nochdUile ? ' checked' : '');
     $T_Nochd_gach_abairt_fios = sprintf($T_Nochd_gach_abairt_fios,$teanga1,$teanga2);

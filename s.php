@@ -134,7 +134,7 @@ EODgearr;
                             . $dealbhagCeartHTML;
     }
 
-    $ceangalGoogle = 'https://www.google.co.uk/search?q=“' . $a . '”';
+    $ceangalGoogle = 'https://www.google.co.uk/search?q=“' . urlencode($a) . '”';
     $ceanglaicheanHtml = "<a href='$ceangalGoogle'><img src='/favicons/google.png' alt='Google' title='$T_Lorg_le_Google'></a>";
     if ($t=='gd') {
         $ceangalDASG = '//www.dasg.ac.uk/corpus/concordance.php?theData=' . $a . '&amp;qmode=sq_nocase&amp;pp=50&amp;del=end&amp;uT=y&amp;del=begin&amp;del=end&amp;uT=y';

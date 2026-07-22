@@ -32,7 +32,7 @@
     $T_mun_tsruth = strtr ( $T_mun_tsruth, [ '{' => '<i>', '}' => '</i>' ] );
     $T_taicColmcille = sprintf($T_taicColmcille,
                               '<a href="//www.forasnagaeilge.ie/"><img src="/favicons/fnag.png" alt=""> Foras na Gaeilge</a>',
-                              '<a href="//www.gaidhlig.org.uk/"><img src="/favicons/bng.png" alt=""> Bòrd na Gàidhlig</a>',
+                              '<a href="//www.gaidhlig.scot/"><img src="/favicons/bng.png" alt=""> Bòrd na Gàidhlig</a>',
                               '<a href="//www.colmcille.net"><img src="/favicons/colmcille.png" alt=""> Colmcille</a>');
 
     $ceangalRiMoSMO = ( isset($myCLIL->id)

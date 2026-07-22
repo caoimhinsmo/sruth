@@ -204,7 +204,8 @@ error_log('Sruth: construct: deiseil');
                            'de' =>'Deutsch',
                            'sco'=>'Scots',
                            'cy' =>'Cymraeg',
-                           'sga'=>'Sengoídelc');
+                           'sga'=>'Sengoídelc',
+                           'ru' =>'Русский');
       } else {
           $ainmean = array('gd'=>'Gàidhlig',
                            'ga'=>'Gaeilge',
