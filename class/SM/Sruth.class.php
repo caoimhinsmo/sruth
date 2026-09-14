@@ -127,8 +127,8 @@ END_selCanan;
       $cobhairHtml = ( $duilleagAghaidh ? "<li class='deas'><a href='cobhair.php'>$T_Cobhair</a>" : '' );
       $navbar = <<<EOD_NAVBAR
 <ul class="smo-navlist">
-<li><a href="/toisich/" title="Sabhal Mór Ostaig - prìomh dhuilleag (le dà briog)">SMO</a>
-<li><a href="/teanga/" title="Goireasan iol-chànanach aig SMO">Teanga</a>$sruthCeangal
+<li><a href="/toisich/" title="Duilleag thòiseachaidh aig teanga.info">Teanga</a>
+<li><a href="/teanga/" title="Goireasan iol-chànanach aig teanga.info">Teanga</a>$sruthCeangal
 $ceangalRiMoSMO
 <li class="deas" onclick="document.cookie='sruthSeall=$sruthSeallEile';location.reload();"><a title="$teacsaPutanFios">$teacsaPutan</a>
 $cobhairHtml
